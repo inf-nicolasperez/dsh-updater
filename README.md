@@ -1,4 +1,4 @@
-﻿# dsh-updater
+# dsh-updater
 
 A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) bundle that tells you when a newer dsh release exists and installs it for you â€” without leaving the Web UI.
 
@@ -35,6 +35,8 @@ Pin the release tag (`#v1.0.0`); omit it to track `main`:
 In the UI: **Settings â†’ Plugins â†’ Add**, then paste the same string.
 
 ### From npm
+
+Available once the release is on npm; until then use the git tag above.
 
 ```jsonc
 // plugin_manager
