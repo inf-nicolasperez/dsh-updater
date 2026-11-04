@@ -16,7 +16,7 @@ dsh has no `dsh update` command, and the CLI is normally installed globally with
 
 | | |
 |---|---|
-| dsh | `>= 0.2.1-rc.5` (declared as `engines.dsh`); tested on `0.2.1-rc.5` |
+| dsh | `>= 0.2.1-rc.5` (declared as `engines.dsh`); tested on `0.2.1-rc.5` and `0.2.2-rc.1` |
 | Deployment | the **Web** profile — the plugin registers HTTP routes on `webServer` behind `connection`'s trust fence |
 | Runtime | nothing beyond what dsh already needs; it shells out to the npm that owns the install |
 
@@ -99,6 +99,17 @@ npm install --global @deepseek-ai/dsh@<version> --prefix <the npm prefix owning 
 ```
 
 using the same Node that runs dsh and its `npm-cli.js` (no shell, no PATH guessing). dsh must be restarted afterwards; the plugin says so instead of pretending it is done.
+
+### When the new release needs a newer Node
+
+Global tools live per Node version, and version managers expose the active one through a symlink (nvm4w: `C:\nvm4w\nodejs`). After switching Node, reinstall what dsh delegates to under the new version — otherwise the failure looks unrelated to the upgrade:
+
+```
+nvm use 24.9.0
+npm i -g @deepseek-ai/dsh@next pnpm
+```
+
+`pnpm` is the one people miss: the plugin manager shells out to it, so bundle installs and removals fail without it. Any MCP server configured with an absolute `command`/`args` under the version-manager path fails the same way (typically `ERR_MODULE_NOT_FOUND`); reinstall it under the new version or point its paths at the older version's tree.
 
 ## Removing
 
