@@ -22,7 +22,7 @@
   },
   "plugins": [
     {
-      "name": "@inf-nicolasperez/dsh-updater",
+      "name": "@inf-nicolas/dsh-updater",
       "title": {
         "en": "dsh Updater",
         "zh": "dsh 更新"

@@ -1,9 +1,9 @@
 window.__ModuleLoader__.load({
-  id: '@inf-nicolasperez/dsh-updater',
+  id: '@inf-nicolas/dsh-updater',
   factory(require) {
     const React = require('react')
     const h = React.createElement
-    const NS = '@inf-nicolasperez/dsh-updater'
+    const NS = '@inf-nicolas/dsh-updater'
 
     const ENDPOINTS = {
       state: '/dsh-updater/state',

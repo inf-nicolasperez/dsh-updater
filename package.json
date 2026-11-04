@@ -1,5 +1,5 @@
 {
-  "name": "@inf-nicolasperez/dsh-updater",
+  "name": "@inf-nicolas/dsh-updater",
   "version": "1.0.0",
   "description": "Check for and install DeepSeek Harness (dsh) releases from the Web UI: a Settings row, a sidebar button, toasts, and an agent tool.",
   "type": "module",

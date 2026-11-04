@@ -13,5 +13,5 @@
 #                        Node than this process runs              (default false)
 - insert:
     - id: dsh-updater
-      name: '@inf-nicolasperez/dsh-updater'
+      name: '@inf-nicolas/dsh-updater'
       config: {}
