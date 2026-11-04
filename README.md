@@ -17,21 +17,22 @@ dsh has no `dsh update` command, and the CLI is normally installed globally with
 | | |
 |---|---|
 | dsh | `>= 0.2.1-rc.5` (declared as `engines.dsh`); tested on `0.2.1-rc.5` and `0.2.2-rc.1` |
-| Deployment | the **Web** profile — the plugin registers HTTP routes on `webServer` behind `connection`'s trust fence |
-| Runtime | nothing beyond what dsh already needs; it shells out to the npm that owns the install |
+| Deployment | the **Web** profile — the plugin registers HTTP routes on `webServer` behind `connection`'s trust fence. A headless/SDK profile leaves it inactive rather than failing. |
+| Node | the same runtime dsh runs on; the plugin only *reads* `engines.node` of the release it considers |
+| pnpm | **required by dsh's plugin manager**, not by this plugin — `install_bundle` shells out to `pnpm`, so a machine without it fails with `'pnpm' is not recognized`. Install once: `npm i -g pnpm` |
 
 ## Install
 
 ### From GitHub
 
-Ask your agent, or call the plugin manager directly:
+Pin the release tag (`#v1.0.0`); omit it to track `main`:
 
 ```jsonc
 // plugin_manager
-{ "action": "install_bundle", "target": "git+https://github.com/inf-nicolasperez/dsh-updater.git" }
+{ "action": "install_bundle", "target": "git+https://github.com/inf-nicolasperez/dsh-updater.git#v1.0.0" }
 ```
 
-In the UI: **Settings → Plugins → Add**, then paste `git+https://github.com/inf-nicolasperez/dsh-updater.git`.
+In the UI: **Settings → Plugins → Add**, then paste the same string.
 
 ### From npm
 
@@ -48,7 +49,7 @@ Add this index URL where your build reads custom plugin indexes:
 https://raw.githubusercontent.com/inf-nicolasperez/dsh-updater/main/market/index.json
 ```
 
-The index pins an exact commit, so installing from it is reproducible.
+The index pins an exact commit, so installing from it is reproducible. On 0.2.x the Discover tab comes from the experimental plugin-market bundle, which is off by default — enable it first if the tab is missing.
 
 After installing, refresh the Web page if the new row does not appear immediately (`dsh-client-hmr` usually reloads it in place).
 
