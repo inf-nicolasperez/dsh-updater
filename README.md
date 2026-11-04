@@ -7,9 +7,9 @@ dsh has no `dsh update` command, and the CLI is normally installed globally with
 - **Settings → General** — a `dsh updates` row: installed version, the published release, the channel and dist-tag it came from, *Check for updates*, and *Update to x.y.z*.
 - **Sidebar foot** — a *Check for updates* button (icon-only in the collapsed rail) with an amber dot while a release is waiting.
 - **Toasts** — a real UI toast from the frame-wide overlay layer:
-  - no update → *"No update available — dsh 0.2.1-rc.5 is the latest release."*
-  - update → *"dsh 0.2.2-rc.1 is available"* with **Update now** / **Not now**, so nothing installs without your click
-  - installing → *"Updating dsh to 0.2.2-rc.1…"* (sticky), then the result
+  - no update → *"No update available — dsh x.x.x-rc.x is the latest release."*
+  - update → *"dsh x.x.x-rc.x is available"* with **Update now** / **Not now**, so nothing installs without your click
+  - installing → *"Updating dsh to x.x.x-rc.x…"* (sticky), then the result
 - **Agent tool** — `dsh_update` with `status` / `check` / `update`, calling the same Host methods as the buttons.
 
 ## Requirements
@@ -22,7 +22,7 @@ dsh has no `dsh update` command, and the CLI is normally installed globally with
 
 ## Install
 
-### From GitHub (works today, no npm publish needed)
+### From GitHub
 
 Ask your agent, or call the plugin manager directly:
 
