@@ -50,11 +50,9 @@
       "versions": [
         {
           "version": "1.0.0",
-          "publishTimestamp": 1793825506,
+          "publishTimestamp": 1793827133,
           "source": {
-            "type": "git",
-            "url": "https://github.com/inf-nicolasperez/dsh-updater",
-            "commit": "a3b7687455978de91963bb96c7331ef689bbab1a"
+            "type": "npm"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.5"
