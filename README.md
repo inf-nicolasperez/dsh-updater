@@ -36,12 +36,12 @@ In the UI: **Settings â†’ Plugins â†’ Add**, then paste the same strin
 
 ### From npm
 
-Available once the release is on npm; until then use the git tag above.
-
 ```jsonc
 // plugin_manager
 { "action": "install_bundle", "target": "@inf-nicolas/dsh-updater@1.0.0" }
 ```
+
+A brand-new release can answer `404` for a few minutes while npm indexes it — if that happens, install from the git tag above and retry later.
 
 ### Through a plugin index (Discover tab)
 
