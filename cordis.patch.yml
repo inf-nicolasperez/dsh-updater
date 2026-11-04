@@ -1,0 +1,17 @@
+# dsh-updater: one Host row. The Client half is injected by the package's
+# `dsh.client` declaration, not by a Loader row.
+#
+# Recognized config keys, all optional:
+#   channel              'newest' (default: the highest version across every
+#                        npm dist-tag) or one tag name: latest | next | alpha
+#   registry             npm registry base URL (default https://registry.npmjs.org)
+#   autoCheck            check on activation and on the interval  (default true)
+#   autoInstall          install a newer release without a click   (default false)
+#   checkIntervalMinutes minutes between automatic checks         (default 360)
+#   allowUpdate          allow any install to run npm             (default true)
+#   allowUnsupportedNode install even when the release needs a newer
+#                        Node than this process runs              (default false)
+- insert:
+    - id: dsh-updater
+      name: '@inf-nicolasperez/dsh-updater'
+      config: {}

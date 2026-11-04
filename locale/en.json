@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "dsh Updater",
+    "description": "Checks the npm registry for a newer dsh release and installs it, from Settings → General or the sidebar."
+  }
+}

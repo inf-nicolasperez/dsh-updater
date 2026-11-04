@@ -1,0 +1,54 @@
+{
+  "name": "@inf-nicolasperez/dsh-updater",
+  "version": "1.0.0",
+  "description": "Check for and install DeepSeek Harness (dsh) releases from the Web UI: a Settings row, a sidebar button, toasts, and an agent tool.",
+  "type": "module",
+  "license": "MIT",
+  "author": "inf-nicolasperez (https://github.com/inf-nicolasperez)",
+  "homepage": "https://github.com/inf-nicolasperez/dsh-updater#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inf-nicolasperez/dsh-updater.git"
+  },
+  "bugs": {
+    "url": "https://github.com/inf-nicolasperez/dsh-updater/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "dsh-bundle",
+    "updater",
+    "release-check"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.5"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings-general",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "dsh 更新",
+    "description": "从 npm 源检查 dsh 是否有新版本，并在设置 → 通用或侧边栏中安装更新。"
+  }
+}
